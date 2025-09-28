@@ -69,19 +69,31 @@ public class Lista {
         }
     }
 
-    public void insertionSort(int[] vet){
-        int aux,i=0;
-        int menor;
-        int TL=vet.length;
-        boolean troca = true;
-        while(troca && i<TL){
-            menor = 0;
-            troca = false;
-            for(int j=0; j<TL;j++){
-                if(vet[j] < menor)
-                    menor = vet[j];
+    public void selectionSort(int[] vet){
+        int TL = vet.length;
+        int menor,aux;
+
+        for(int i=0; i<TL-1;i++){
+            menor = i;
+            for(int j=i+1;j<TL;j++){
+                if(vet[j]<vet[menor]){
+                    menor = j;
+                }
             }
-            i++;
+            aux = vet[i];
+            vet[i] = vet[menor];
+            vet[menor] = aux;
         }
     }
+
+    public void selectionSortLista(No atual){
+        int menor;
+        No aux;
+        while(atual.getProx() != null){
+            menor = atual.getProx().getInfo();
+
+        }
+    }
+
+
 }
